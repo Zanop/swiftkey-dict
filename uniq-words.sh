@@ -10,4 +10,4 @@ if [[ ! -f $1 ]]; then
 fi
 
 grep -o -E '\w+' "$1" | grep -E '^[а-зА-З]+$' | sort | uniq > $(basename $1)_uniq.txt
-cat *_uniq.txt | sort | uniq > bgwords.txt
+cat *_uniq.txt | sort | uniq | tr '\n' ' ' > bgwords.txt
